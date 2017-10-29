@@ -11,7 +11,7 @@ minetest.override_item("farming:flour", {
 farming.register_plant("grains:rye", {
 	description = "Rye seed",
 	paramtype2 = "meshoptions",
-	inventory_image = "farming_rye_seed.png",
+	inventory_image = "grains_rye_seed.png",
 	steps = 8,
 	minlight = 13,
 	maxlight = default.LIGHT_MAX,
@@ -22,14 +22,14 @@ farming.register_plant("grains:rye", {
 
 minetest.register_craftitem("grains:rye_bread", {
 	description = "Rye Bread",
-	inventory_image = "farming_rye_bread.png",
+	inventory_image = "grains_rye_bread.png",
 	on_use = minetest.item_eat(5),
 	groups = {flammable = 2},
 })
 
 minetest.register_craftitem("grains:rye_flour", {
 	description = "Rye Flour",
-	inventory_image = "farming_rye_flour.png",
+	inventory_image = "grains_rye_flour.png",
 	groups = {flammable = 1},
 })
 
@@ -38,7 +38,7 @@ minetest.register_craftitem("grains:rye_flour", {
 farming.register_plant("grains:oat", {
 	description = "Oat seed",
 	paramtype2 = "meshoptions",
-	inventory_image = "farming_oat_seed.png",
+	inventory_image = "grains_oat_seed.png",
 	steps = 8,
 	minlight = 13,
 	maxlight = default.LIGHT_MAX,
@@ -49,14 +49,14 @@ farming.register_plant("grains:oat", {
 
 minetest.register_craftitem("grains:oat_bread", {
 	description = "Oatbread",
-	inventory_image = "farming_oat_bread.png",
+	inventory_image = "grains_oat_bread.png",
 	on_use = minetest.item_eat(5),
 	groups = {flammable = 2},
 })
 
 minetest.register_craftitem("grains:oat_flour", {
 	description = "Oat Flour",
-	inventory_image = "farming_oat_flour.png",
+	inventory_image = "grains_oat_flour.png",
 	groups = {flammable = 1},
 })
 
@@ -65,7 +65,7 @@ minetest.register_craftitem("grains:oat_flour", {
 farming.register_plant("grains:barley", {
 	description = "Barley seed",
 	paramtype2 = "meshoptions",
-	inventory_image = "farming_barley_seed.png",
+	inventory_image = "grains_barley_seed.png",
 	steps = 8,
 	minlight = 13,
 	maxlight = default.LIGHT_MAX,
@@ -76,14 +76,14 @@ farming.register_plant("grains:barley", {
 
 minetest.register_craftitem("grains:barley_bread", {
 	description = "Barley Bread",
-	inventory_image = "farming_barley_bread.png",
+	inventory_image = "grains_barley_bread.png",
 	on_use = minetest.item_eat(5),
 	groups = {flammable = 2},
 })
 
 minetest.register_craftitem("grains:barley_flour", {
 	description = "Barley Flour",
-	inventory_image = "farming_barley_flour.png",
+	inventory_image = "grains_barley_flour.png",
 	groups = {flammable = 1},
 })
 
