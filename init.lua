@@ -15,7 +15,7 @@ farming.register_plant("grains:rye", {
 	steps = 8,
 	minlight = 13,
 	maxlight = default.LIGHT_MAX,
-	fertility = {"grassland"},
+	fertility = {"savannah"},
 	groups = {flammable = 4},
 	place_param2 = 3,
 })
@@ -42,7 +42,7 @@ farming.register_plant("grains:oat", {
 	steps = 8,
 	minlight = 13,
 	maxlight = default.LIGHT_MAX,
-	fertility = {"grassland"},
+	fertility = {"savannah"},
 	groups = {flammable = 4},
 	place_param2 = 3,
 })
@@ -87,6 +87,33 @@ minetest.register_craftitem("grains:barley_flour", {
 	groups = {flammable = 1},
 })
 
+-- RICE
+
+farming.register_plant("grains:rice", {
+	description = "Rice grains",
+	paramtype2 = "meshoptions",
+	inventory_image = "grains_rice_seed.png",
+	steps = 8,
+	minlight = 13,
+	maxlight = default.LIGHT_MAX,
+	fertility = {"savannah"},
+	groups = {flammable = 4},
+	place_param2 = 3,
+})
+
+minetest.register_craftitem("grains:rice_bread", {
+	description = "Rice Bread",
+	inventory_image = "grains_rice_bread.png",
+	on_use = minetest.item_eat(5),
+	groups = {flammable = 2},
+})
+
+minetest.register_craftitem("grains:rice_flour", {
+	description = "Rice Flour",
+	inventory_image = "grains_rice_flour.png",
+	groups = {flammable = 1},
+})
+
 -- Cooking
 
 minetest.register_craft({
@@ -116,16 +143,29 @@ minetest.register_craft({
 })
 
 minetest.register_craft({
+	type = "cooking",
+	cooktime = 15,
+	output = "grains:barley_bread",
+	recipe = "grains:barley_flour"
+})
+
+minetest.register_craft({
 	type = "shapeless",
 	output = "grains:barley_flour",
 	recipe = {"grains:barley", "grains:barley", "grains:barley", "grains:barley"}
 })
 
 minetest.register_craft({
+	type = "shapeless",
+	output = "grains:rice_flour",
+	recipe = {"grains:rice", "grains:rice", "grains:rice", "grains:rice"}
+})
+
+minetest.register_craft({
 	type = "cooking",
 	cooktime = 15,
-	output = "grains:barley_bread",
-	recipe = "grains:barley_flour"
+	output = "grains:rice_bread",
+	recipe = "grains:rice_flour"
 })
 
 -- Fuels
@@ -155,6 +195,12 @@ minetest.register_craft({
 
 minetest.register_craft({
 	type = "fuel",
+	recipe = "grains:rice_bread",
+	burntime = 1,
+})
+
+minetest.register_craft({
+	type = "fuel",
 	recipe = "farming:wheat",
 	burntime = 1,
 })
@@ -177,6 +223,12 @@ minetest.register_craft({
 	burntime = 1,
 })
 
+minetest.register_craft({
+	type = "fuel",
+	recipe = "grains:rice",
+	burntime = 1,
+})
+
 -- Seed gathering
 
 for i = 1, 5 do
@@ -195,7 +247,8 @@ for i = 1, 5 do
 		max_items = 1,
 		items = {
 			{items = {'grains:seed_rye'},rarity = 10},
-			{items = {'grains:seed_oat'},rarity = 20},
+			{items = {'grains:seed_rice'},rarity = 20},
+			{items = {'grains:seed_oat'},rarity = 15},
 			{items = {'default:dry_grass_1'}},
 		}
 	}})
